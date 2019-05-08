@@ -9,6 +9,7 @@ body
 img
   max-width: 100%
 .button
+  transition: all 0.5s ease-in-out
   cursor: pointer
   box-shadow: 0 4px 0 darken($active, 10), inset 0 5px 2px rgba(255, 255, 255, 0.05), inset 0 -3px 1px rgba(255, 255, 255, 0.07)
   border-radius: 43px
@@ -20,8 +21,30 @@ img
   letter-spacing: 0.7px
   text-transform: uppercase
   color: #fff
+  &:hover
+    background: darken($active, 4)
+    transform: translateY(2px)
+.lines
+  z-index: 1
+  position: absolute
+  display: flex
+  justify-content: space-between
+  width: 100%
+  height: 100%
+  top: 0
+  left: 50%
+  width: 1141px
+  transform: translateX(-50%)
+  background: none
+.line
+  border-left: 1px solid rgba(#fff, 0.1)
+  flex-basis: 25%
+  &:last-child
+    border-right: 1px solid rgba(#fff, 0.1)
 
 .container
+  z-index: 2
+  position: relative
   height: 100%
   max-width: 1200px
   padding: 0 15px
@@ -78,6 +101,7 @@ p
     font-size: 20px
     line-height: 24px
   &-button
+    transition: all 0.5s ease-in-out
     cursor: pointer
     display: flex
     align-items: center
@@ -97,8 +121,13 @@ p
       padding-left: 15px
       display: block
     svg
+      transition: all 0.5s ease-in-out
       fill: $active
       margin-right: 15px
+    &:hover
+      background: $active
+      svg
+        fill: #fff
 
 
 .main
@@ -114,13 +143,14 @@ p
   &-title
     font-size: 50px
     line-height: 56px
-    font-weight: 600
+    font-weight: 400
     margin: 0
     margin-bottom: 15px
   &-subtitle
     line-height: 30px
     font-size: 34px
     margin: 0
+    font-weight: 400
     margin-bottom: 45px
   &-text
     opacity: 0.75
@@ -147,6 +177,16 @@ p
 .footer
   display: flex
   align-items: center
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    height: 1px
+    background: rgba(#fff, 0.1)
+    top: -20px
+    left: 50%
+    transform: translateX(-50%)
+    width: 100vw
   &-copyright
     max-width: 204px
     font-size: 12px
@@ -154,6 +194,8 @@ p
     margin-right: 400px
     a
       color: $active
+      &:hover
+        color: lighten($active, 5)
   &-social
     display: flex
     align-items: center
@@ -167,7 +209,10 @@ p
       a
         color: $active
         margin-right: 22px
+        &:hover
+          color: lighten($active, 5)
 .overlay
+  z-index: 10
   overflow: auto
   display: none
   top: 0
@@ -200,10 +245,10 @@ p
     background-color: #ffffff
     width: 95%
     z-index: -1
-    height: 100%
+    height: 50%
   &-wrapper
     border-radius: 5px
-    border: 1px dashed rgba(#000, 0.1)
+    border: 1px dashed rgba(#000, 0.3)
     padding: 40px 40px 18px
   &-title
     font-family: "PFRegal", sans-serif
@@ -221,7 +266,7 @@ p
     &__input
       color: rgba(#000, 0.5)
       font-size: 18px
-      box-shadow: inset 0 5px 5px rgba(26, 26, 25, 0.1)
+      box-shadow: inset 0 5px 10px rgba(26, 26, 25, 0.1)
       padding-left: 44px
       border-radius: 6px
       background-color: #f7f7f7
@@ -244,7 +289,7 @@ p
     line-height: 36px
     border-radius: 50%
   &-button
-    margin-bottom: 25px
+    margin-bottom: 26px
   &-agree
     display: inline-block
     max-width: 280px
@@ -252,6 +297,8 @@ p
     line-height: 19.98px
     a
       color: $active
+      &:hover
+          color: lighten($active, 5)
 @media (max-width: 1200px)
   .content
     background-position: 20%

@@ -15,6 +15,12 @@
 
 <body>
   <div class="content">
+    <div class="lines">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
     <div class="container">
       <header class="header">
         <div class="header-item">
@@ -101,14 +107,14 @@
         <div class="popup-wrapper">
           <div class="popup-close">&times;</div>
           <div class="popup-title">Оставьте заявку</div>
-          <div class="popup-text">и наш менеджер свяжется
+          <div class="popup-text">и наш менеджер свяжется <br>
             с вами через 3 минут</div>
           <form class="popup-form">
             <input type="text" name="name" placeholder="Введите ваше имя:" class="popup-form__input">
-            <input type="tel" name="phone" placeholder="Введите ваш телефон:" class="popup-form__input">
+            <input type="tel" name="phone" id="phone" placeholder="Введите ваш телефон:" class="popup-form__input">
             <input type="submit" value="оставить заявку" class="button popup-button">
           </form>
-          <small class="popup-agree">Нажимая на кнопку «Узнать стоимость»,
+          <small class="popup-agree">Нажимая на кнопку «Оставить заявку»,
             вы принимаете <a href="#">условия передачи данных</a></small>
         </div>
       </div>
@@ -117,6 +123,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
   <script src="main.js"></script>
 </body>
 

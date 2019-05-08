@@ -16,6 +16,9 @@ img {
 }
 
 .button {
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   cursor: pointer;
   -webkit-box-shadow: 0 4px 0 #0073cc, inset 0 5px 2px rgba(255, 255, 255, 0.05), inset 0 -3px 1px rgba(255, 255, 255, 0.07);
           box-shadow: 0 4px 0 #0073cc, inset 0 5px 2px rgba(255, 255, 255, 0.05), inset 0 -3px 1px rgba(255, 255, 255, 0.07);
@@ -31,7 +34,49 @@ img {
   color: #fff;
 }
 
+.button:hover {
+  background: #0084eb;
+  -webkit-transform: translateY(2px);
+      -ms-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.lines {
+  z-index: 1;
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  width: 1141px;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: none;
+}
+
+.line {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-flex-basis: 25%;
+      -ms-flex-preferred-size: 25%;
+          flex-basis: 25%;
+}
+
+.line:last-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .container {
+  z-index: 2;
+  position: relative;
   height: 100%;
   max-width: 1200px;
   padding: 0 15px;
@@ -149,6 +194,9 @@ p {
 }
 
 .header-button {
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -182,8 +230,19 @@ p {
 }
 
 .header-button svg {
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   fill: #0090ff;
   margin-right: 15px;
+}
+
+.header-button:hover {
+  background: #0090ff;
+}
+
+.header-button:hover svg {
+  fill: #fff;
 }
 
 .main {
@@ -207,7 +266,7 @@ p {
 .main-title {
   font-size: 50px;
   line-height: 56px;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
   margin-bottom: 15px;
 }
@@ -216,6 +275,7 @@ p {
   line-height: 30px;
   font-size: 34px;
   margin: 0;
+  font-weight: 400;
   margin-bottom: 45px;
 }
 
@@ -275,6 +335,20 @@ p {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+}
+
+.footer::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  top: -20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100vw;
 }
 
 .footer-copyright {
@@ -286,6 +360,10 @@ p {
 
 .footer-copyright a {
   color: #0090ff;
+}
+
+.footer-copyright a:hover {
+  color: #1a9bff;
 }
 
 .footer-social {
@@ -312,7 +390,12 @@ p {
   margin-right: 22px;
 }
 
+.footer-social__items a:hover {
+  color: #1a9bff;
+}
+
 .overlay {
+  z-index: 10;
   overflow: auto;
   display: none;
   top: 0;
@@ -356,13 +439,13 @@ p {
   background-color: #ffffff;
   width: 95%;
   z-index: -1;
-  height: 100%;
+  height: 50%;
 }
 
 .popup-wrapper {
   -webkit-border-radius: 5px;
           border-radius: 5px;
-  border: 1px dashed rgba(0, 0, 0, 0.1);
+  border: 1px dashed rgba(0, 0, 0, 0.3);
   padding: 40px 40px 18px;
 }
 
@@ -397,8 +480,8 @@ p {
 .popup-form__input {
   color: rgba(0, 0, 0, 0.5);
   font-size: 18px;
-  -webkit-box-shadow: inset 0 5px 5px rgba(26, 26, 25, 0.1);
-          box-shadow: inset 0 5px 5px rgba(26, 26, 25, 0.1);
+  -webkit-box-shadow: inset 0 5px 10px rgba(26, 26, 25, 0.1);
+          box-shadow: inset 0 5px 10px rgba(26, 26, 25, 0.1);
   padding-left: 44px;
   -webkit-border-radius: 6px;
           border-radius: 6px;
@@ -430,7 +513,7 @@ p {
 }
 
 .popup-button {
-  margin-bottom: 25px;
+  margin-bottom: 26px;
 }
 
 .popup-agree {
@@ -442,6 +525,10 @@ p {
 
 .popup-agree a {
   color: #0090ff;
+}
+
+.popup-agree a:hover {
+  color: #1a9bff;
 }
 
 @media (max-width: 1200px) {
