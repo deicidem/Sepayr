@@ -21,6 +21,7 @@ img
   letter-spacing: 0.7px
   text-transform: uppercase
   color: #fff
+  white-space: nowrap
   &:hover
     background: darken($active, 4)
     transform: translateY(2px)
@@ -29,11 +30,11 @@ img
   position: absolute
   display: flex
   justify-content: space-between
-  width: 100%
+  width: 100vw
   height: 100%
   top: 0
   left: 50%
-  width: 1141px
+  max-width: 1141px
   transform: translateX(-50%)
   background: none
 .line
@@ -54,6 +55,8 @@ img
   justify-content: space-between
 
 .content
+  position: relative
+  overflow: hidden
   padding: 33px 0 16px
   width: 100vw
   height: 100vh
@@ -240,7 +243,7 @@ p
     bottom: -10px
     left: 50%
     transform: translateX(-50%)
-    box-shadow-bottom: 0 -10px 30px rgba(0, 0, 0, 0.15)
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15)
     border-radius: 10px
     background-color: #ffffff
     width: 95%
@@ -335,8 +338,6 @@ p
     &-money
       &__text
         font-size: 14px
-  .button
-    line-height: 70px
   .footer
     justify-content: space-between
     &-copyright
@@ -369,7 +370,7 @@ p
       margin-bottom: 0
     &-subtitle
       font-size: 24px
-      margin-bottom: 35зч
+      margin-bottom: 35px
     &-text
       font-size: 15px
       line-height: 18px
@@ -383,6 +384,14 @@ p
         font-size: 11px
 
 @media (max-width: 600px)
+  .line
+    flex-basis: 50%
+    &s
+      max-width: 95%
+    &:nth-child(2)
+      border-right: 1px solid rgba(#fff, 0.1)
+    &_hidden
+      display: none
   .overlay
     .popup
       &-wrapper
@@ -408,9 +417,6 @@ p
   .container
     min-height: 100vh
     height: 100%
-  .button
-    line-height: 60px
-    padding: 0 20px
   .header
     margin-bottom: 100px
     &-contract
@@ -431,6 +437,9 @@ p
         line-height: 16px
         strong
           display: block
+    &-subtitle
+      br
+        display: block
     &-text
       margin-left: 0
       br
@@ -453,13 +462,25 @@ p
         margin-bottom: 17px
         line-height: 25px
       &-text
-        font-size: 14px
+        font-size: 13px
         margin-bottom: 17px
+      &-button
+        padding: 0 10px
+        line-height: 50px
+        appearance: none
       &-form
         &__input
           font-size: 13px
           line-height: 45px
           margin-bottom: 15px
+      &-agree
+        font-size: 10px
+  .main
+    &-title
+      font-size: 33px
+    &-subtitle
+      display: inline-block
+      max-width: 85%
   .header
     align-items: flex-start
     &-item
@@ -487,6 +508,6 @@ p
         font-size: 11px
         margin-right: 0
         margin-bottom: 10px
-@media (max-height: 500px)
+@media (max-height: 450px)
   .popup
     margin: 150px 0

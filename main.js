@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  $('.lines').css('height', $(window).height() - $('.footer').height() - 36);
+  $('.lines').css('height', $('body').height() - $('.footer').height() - 36);
   $('.popup-open').on('click', () => {
     $('.popup, .overlay').fadeIn();
     $('body').css('overflow', 'hidden');
@@ -11,9 +11,24 @@ $(document).ready(() => {
   });
 
   $(window).resize(function () {
-    $('.lines').css('height', $(window).height() - $('.footer').height() - 36);
+    $('.lines').css('height', $('body').height() - $('.footer').height() - 36);
   });
 
   $("#phone").mask("+7 (999) 999-99-99");
+
+  $('form').submit(function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "../mail.php",
+      data: $(this).serialize()
+    }).done(function () {
+      $(this).find("input").val("");
+      $('.overlay').fadeOut();
+      $(location).attr('href', '../send.html');
+      $("footer form").trigger("reset");
+    });
+    return false;
+  });
 
 });
