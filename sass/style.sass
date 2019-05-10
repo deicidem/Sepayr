@@ -150,6 +150,8 @@ p
     margin: 0
     margin-bottom: 15px
   &-subtitle
+    br
+      display: none
     line-height: 30px
     font-size: 34px
     margin: 0
@@ -448,9 +450,6 @@ p
         line-height: 16px
         strong
           display: block
-    &-subtitle
-      br
-        display: block
     &-text
       margin-left: 0
       br
@@ -519,6 +518,11 @@ p
         font-size: 11px
         margin-right: 0
         margin-bottom: 10px
+@media (max-width: 450px)
+   .main
+    &-subtitle
+      br
+        display: block
 @media (max-height: 450px)
   .popup
     margin: 150px 0

@@ -281,6 +281,10 @@ p {
   margin-bottom: 45px;
 }
 
+.main-subtitle br {
+  display: none;
+}
+
 .main-text {
   opacity: 0.75;
   line-height: 24px;
@@ -753,9 +757,6 @@ p {
   .main-contract__text strong {
     display: block;
   }
-  .main-subtitle br {
-    display: block;
-  }
   .main-text {
     margin-left: 0;
   }
@@ -875,6 +876,12 @@ p {
     font-size: 11px;
     margin-right: 0;
     margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .main-subtitle br {
+    display: block;
   }
 }
 
