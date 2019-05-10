@@ -225,7 +225,7 @@ p
   height: 100%
   background: rgba(#000, 0.8)
 .popup
-  max-width: 420px
+  display: none
   text-align: center
   color: #000
   padding: 10px
@@ -236,7 +236,7 @@ p
   top: 50%
   left: 50%
   transform: translate(-50%, -50%)
-  z-index: 1
+  z-index: 2
   &::after
     content: ''
     position: absolute
@@ -247,8 +247,18 @@ p
     border-radius: 10px
     background-color: #ffffff
     width: 95%
-    z-index: -1
-    height: 50%
+    z-index: -5
+    height: 20px
+  &-privacy
+    .popup-wrapper
+      overflow: auto
+      max-height: 90vh
+    text-align: left
+    max-width: 95%
+    max-height: 95%
+
+  &-form
+    max-width: 420px
   &-wrapper
     border-radius: 5px
     border: 1px dashed rgba(#000, 0.3)
@@ -279,6 +289,7 @@ p
       &:first-child
         margin-bottom: 14px
   &-close
+    text-align: center
     cursor: pointer
     font-size: 28px
     font-weight: 500
